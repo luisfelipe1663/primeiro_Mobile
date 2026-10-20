@@ -53,7 +53,7 @@ class MyHomePage extends StatefulWidget {
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
-}
+} 
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
@@ -68,6 +68,18 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
+
+  void _decrementCounter(){
+    setState(() {
+      _counter --;
+    });
+  }
+
+void _resetCount(){
+  setState(() {
+    _counter = 0;
+  });
+}
 
   @override
   Widget build(BuildContext context) {
@@ -114,11 +126,34 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton:Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+
+        children: [
+           FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
+      SizedBox(width: 10,),
+      FloatingActionButton(
+        onPressed: _decrementCounter,
+        tooltip: 'Decrementar',
+        child:const Icon(Icons.remove),
+      ),
+
+       SizedBox(width: 10,),
+      FloatingActionButton(
+        onPressed: _resetCount,
+        tooltip: 'Resetar',
+        child:const Icon(Icons.refresh),
+      )
+
+        ],
+      ),
+      
+      
     );
   }
+
 }

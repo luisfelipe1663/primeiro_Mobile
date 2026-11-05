@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 //import 'package:flutter_application_1/screens/perfil_screen.dart';
-import 'package:flutter_application_1/screens/register_screen.dart';
+import 'package:atividade_uc14/screen/curriculo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,15 +13,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
+       
       //remove a faixa de DEBUG
       debugShowCheckedModeBanner: false,
+       theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey
+          ),
+       ),
 
       //Home recebe nosso primeiro Wifget
       //que será exibido pelo aplicativo
       
-     // home: const PerfilScreen(),
-     home: const RegisterScreen(),
+      home: const CurriloScreen(),
+    
     );
   }
 }
-
